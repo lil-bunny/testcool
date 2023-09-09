@@ -1,7 +1,4 @@
-if ("serviceWorker" in navigator) {
-  // register service worker
-  navigator.serviceWorker.register("service-worker.js");
-}
+
 const APIURL = "https://api.github.com/users/";
 const main = document.getElementById("main");
 const form = document.getElementById("form");
@@ -14,7 +11,7 @@ async function getUser(username) {
     createUserCard(respData);
 
     getRepos(username);
-}
+}     
 async function getRepos(username) {
     const resp = await fetch(APIURL + username + "/repos");
     const respData = await resp.json();
